@@ -118,8 +118,8 @@ conos.addEventListener('input', function() {
   <div class="form-group">
     <label for=""><h3>Vehiculo :</h3></label>
     <br>
-    <div class="form-group2" id="vehiculo2" required>
-    <input type="radio" name="vehiculo1" id="vehiculosi" value="1">
+    <div class="form-group2" id="vehiculo2">
+    <input type="radio" name="vehiculo1" id="vehiculosi" value="1" required>
     <label for="vehiculosi">Auto</label>
     <input type="radio" name="vehiculo1" id="vehiculono" value="2">
     <label for="vehiculono">Moto</label>
@@ -230,8 +230,8 @@ conos.addEventListener('input', function() {
     <div class="form-group" id="opciones" required>
       <label for=""><h3>Carga Combustible :</h3></label>
       <br>
-      <div class="form-group2" id="opciones" required>
-      <input type="radio" name="opc1" id="si" value="1" onchange="borrarInputs()">
+      <div class="form-group2" id="opciones">
+      <input type="radio" name="opc1" id="si" value="1" onchange="borrarInputs()" required>
       <label for="si">Si</label>
       <input type="radio" name="opc1" id="no" value="2" onchange="borrarInputs()">
       <label for="no">No</label>

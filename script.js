@@ -244,6 +244,24 @@ $(function() {
   });
   
 
+$( document ).ready(function() {
+
+    //Capturas el cambio de algun input radio
+    $("input[type='radio']").change(function(){
+    
+      //Ocultas todo 
+      $("#carga").hide();
+    
+      //obtenes el valor de los dos sets de Radios
+      var opc1 = $("input[name='opc1']:checked").val();
+      
+      //tomas la decisión que queres en base a los dos valores
+      //en este caso si selecciona "nombre" y "ciudad" mostras el input text para el Nombre
+      if(opc1 == 1)
+        $("#carga").show()
+        
+    });
+  });
   
   $( document ).ready(function() {
 

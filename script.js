@@ -1,11 +1,37 @@
 function borrarInputs() {
-  var respuesta = document.querySelector('input[id="no"]:checked').value; {
-    document.getElementById("boucher").value = "";
-    document.getElementById("hora").value = "";
-    document.getElementById("minuto").value = "";
-    document.getElementById("lugar").value = "";
+
+  const si = document.getElementById("si").checked;
+  const cargaDiv = document.getElementById("carga");
+
+  const campos = [
+    document.getElementById("boucher"),
+    document.getElementById("lugar"),
+    document.getElementById("kmcarga"),
+    document.getElementById("hora"),
+    document.getElementById("minuto"),
+    document.getElementById("litros"),
+    document.getElementById("total")
+  ];
+
+  if (si) {
+    // 👉 SI selecciona "Sí"
+    cargaDiv.style.display = "block";
+
+    campos.forEach(campo => {
+      campo.required = true;
+    });
+
+  } else {
+    // 👉 SI selecciona "No"
+    cargaDiv.style.display = "none";
+
+    campos.forEach(campo => {
+      campo.required = false;
+      campo.value = "";
+    });
   }
 }
+
 
 const checkboxMoto = document.getElementById('vehiculono');
 checkboxMoto.addEventListener('click', () => {
@@ -218,24 +244,6 @@ $(function() {
   });
   
 
-$( document ).ready(function() {
-
-    //Capturas el cambio de algun input radio
-    $("input[type='radio']").change(function(){
-    
-      //Ocultas todo 
-      $("#carga").hide();
-    
-      //obtenes el valor de los dos sets de Radios
-      var opc1 = $("input[name='opc1']:checked").val();
-      
-      //tomas la decisión que queres en base a los dos valores
-      //en este caso si selecciona "nombre" y "ciudad" mostras el input text para el Nombre
-      if(opc1 == 1)
-        $("#carga").show()
-        
-    });
-  });
   
   $( document ).ready(function() {
 
